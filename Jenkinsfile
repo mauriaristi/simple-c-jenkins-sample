@@ -1,7 +1,9 @@
 pipeline {
     agent none 
-    stages {
-        node{
+
+    node{
+        stages {
+        
             stage('Build') { 
                 // agent {
                 //     docker {
