@@ -1,10 +1,10 @@
-# Customize the official Debian container to allow Pipeline building of MMG
-# David Sherman 2017-02-07
+# Custom Docker container for gcc compiler
+# 
 
-FROM debian
+FROM gcc:4.9
 
-USER root
+# USER root
 
-## Standard build tools
-RUN apt-get update && \
-    apt-get install -y sudo build-essential git cmake
+# ## Standard build tools
+# RUN apt-get update && \
+#     apt-get install -y sudo build-essential git cmake
