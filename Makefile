@@ -1,42 +1,6 @@
 
 
 
-
-
-# BUILDDIR      = build
-# INCLUDE_DIR   = include
-# BIN_DIR       = bin
-# SOURCE_DIR    = src
-# CC            = clang
-# CFLAGS        = -I$(INCLUDE_DIR)
-
-# SOURCES       = $(SOURCE_DIR)/simple.c 
-# DEPENDS       = $(INCLUDE_DIR)/simple.h
-
-
-
-# LDFLAGS       = -I$(INCLUDE_DIR)
-
-
-# all: simple
-
-# clean:
-# 	rm -rf $(BUILDDIR)/*
-
-# simple: $(SOURCES)
-# 	$(CC) $(SOURCE_DIR)/$(OBJS) -o $@ $(CFLAGS) 
-
-# .c.o:
-# 	$(CPP) -c $(CFLAGS) $< -o $@
-
-
-
-
-
-
-
-
-
 IDIR     =include
 CC       =gcc
 CFLAGS   =-I$(IDIR) 
