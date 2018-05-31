@@ -3,26 +3,67 @@
 
 
 
-BUILDDIR      = build
-INCLUDE_DIR   = include
-BIN_DIR       = bin
-SOURCE_DIR    = src
-CC            = clang
-CFLAGS        = 
-SOURCES       = simple.c 
+# BUILDDIR      = build
+# INCLUDE_DIR   = include
+# BIN_DIR       = bin
+# SOURCE_DIR    = src
+# CC            = clang
+# CFLAGS        = -I$(INCLUDE_DIR)
 
-OBJS          = $(SOURCES:.c=.o)
-
-LDFLAGS       = -I$(INCLUDE_DIR)
+# SOURCES       = $(SOURCE_DIR)/simple.c 
+# DEPENDS       = $(INCLUDE_DIR)/simple.h
 
 
-all: simple
+
+# LDFLAGS       = -I$(INCLUDE_DIR)
+
+
+# all: simple
+
+# clean:
+# 	rm -rf $(BUILDDIR)/*
+
+# simple: $(SOURCES)
+# 	$(CC) $(SOURCE_DIR)/$(OBJS) -o $@ $(CFLAGS) 
+
+# .c.o:
+# 	$(CPP) -c $(CFLAGS) $< -o $@
+
+
+
+
+
+
+
+
+
+IDIR     =include
+CC       =gcc
+CFLAGS   =-I$(IDIR) 
+
+BDIR     =build
+SDIR     =src
+ODIR     =bin
+LDIR     =../lib
+
+LIBS     = 
+
+_DEPS    = simple.h
+DEPS     = $(patsubst %,$(IDIR)/%,$(_DEPS))
+
+_OBJ     = simple.o example1.o
+OBJ      = $(patsubst %,$(ODIR)/%,$(_OBJ))
+
+
+
+
+$(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+example1: $(OBJ)
+	$(CC) -o $(BDIR)/$@ $^ $(CFLAGS) $(LIBS)
+
+.PHONY: clean
 
 clean:
-	rm -rf $(BUILDDIR)/*
-
-simple: $(OBJS)
-	$(CC) $(LDFLAGS) $(SOURCE_DIR)/$(OBJS) -o $(BUILDDIR)/$@
-
-.c.o:
-	$(CPP) -c $(CFLAGS) $< -o $@
+	rm -f $(BDIR)/* $(ODIR)/*.o *~ core $(INCDIR)/*~ 

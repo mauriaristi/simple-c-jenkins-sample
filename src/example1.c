@@ -3,8 +3,10 @@
 int assertResult(int result, int expected){
 
 	if (result == expected){
+		printf("\nASSESSMENT: SUCCESSFUL\n\n");
 		return  0;
-	else{
+	}else{
+		printf("\nASSESSMENT: -- UNSUCCESSFUL -- \n\n");
 		return -1;
 	}
 
@@ -22,3 +24,4 @@ int main(){
 	return assertResult(res,num1+num2);
 
 }
+ 
