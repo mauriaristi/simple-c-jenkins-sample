@@ -11,7 +11,7 @@ pipeline {
             // }
             steps {
                 echo 'Building ... '
-                // sh ' mkdir build && mkdir bin && make' 
+                sh 'make' 
             }
         }
         stage('Test') {
@@ -22,7 +22,7 @@ pipeline {
             // }
             steps {
                 echo 'Testing ... '
-                // sh './build/example1'
+                sh './build/example1'
             }
             // post {
             //     always {
