@@ -24,4 +24,4 @@ int main(){
 	return assertResult(res,num1+num2);
 
 }
- 
+  

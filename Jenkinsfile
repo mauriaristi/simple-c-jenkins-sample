@@ -10,8 +10,8 @@ pipeline {
             //     }
             // }
             steps {
-                // echo 'Building ... '
-                sh ' mkdir build && mkdir bin && make' 
+                echo 'Building ... '
+                // sh ' mkdir build && mkdir bin && make' 
             }
         }
         stage('Test') {
