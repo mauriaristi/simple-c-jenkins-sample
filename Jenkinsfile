@@ -11,7 +11,7 @@ pipeline {
             // }
             steps {
                 // echo 'Building ... '
-                sh 'make' 
+                sh ' mkdir build && make' 
             }
         }
         stage('Test') {
