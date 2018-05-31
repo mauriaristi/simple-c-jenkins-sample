@@ -8,8 +8,8 @@ pipeline {
             //     }
             // }
             steps {
-                echo 'Building ... '
-                // sh 'make' 
+                // echo 'Building ... '
+                sh 'make' 
             }
         }
         stage('Test') {
