@@ -19,10 +19,21 @@ _OBJ     = simple.o example1.o
 OBJ      = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
-
-
 $(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
+
+
+all: $(ODIR) $(BDIR) example1
+
+$(ODIR):
+	mkdir $@
+
+$(BDIR):
+	mkdir $@
+
+
+
+
 
 example1: $(OBJ)
 	$(CC) -o $(BDIR)/$@ $^ $(CFLAGS) $(LIBS)
@@ -30,4 +41,4 @@ example1: $(OBJ)
 .PHONY: clean
 
 clean:
-	rm -f $(BDIR)/* $(ODIR)/*.o *~ core $(INCDIR)/*~ 
+	rm -rf $(BDIR) $(ODIR) 
