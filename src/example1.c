@@ -22,7 +22,7 @@ int main(){
 
 	int result = add2int(num1,num2);
 	
-	return assertResult(res,num1+num2); 
+	return assertResult(result,num1+num2); 
 
 }
   
