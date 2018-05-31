@@ -1,34 +1,33 @@
-
-node{
-
-
-    stage('Build') { 
-        // agent {
-        //     docker {
-        //         image 'python:2-alpine' 
-        //     }
-        // }
-        steps {
-            // echo 'Building ... '
-            sh 'make' 
+pipeline {
+    agent none 
+    stages {
+        stage('Build') { 
+            agent none
+            //     docker {
+            //         image 'python:2-alpine' 
+            //     }
+            // }
+            steps {
+                // echo 'Building ... '
+                sh 'make' 
+            }
         }
-    }
-    stage('Test') {
-        // agent {
-        //     docker {
-        //         image 'qnib/pytest'
-        //     }
-        // }
-        steps {
-            echo 'Testing ... '
-            // sh './build/example1'
+        stage('Test') {
+            agent none
+            //     docker {
+            //         image 'qnib/pytest'
+            //     }
+            // }
+            steps {
+                echo 'Testing ... '
+                // sh './build/example1'
+            }
+            // post {
+            //     always {
+            //         junit 'test-reports/results.xml'
+            //     }
+            // }
         }
-        // post {
-        //     always {
-        //         junit 'test-reports/results.xml'
-        //     }
-        // }
     }
 
 }
-
