@@ -58,7 +58,7 @@ int test2(){
 	
 	printf("Assessing test case 2 -> ");
 
-	return assertResultInt(result, num1+num2+1 ); 
+	return assertResultInt(result, 5 ); 
 
 }
 // ==============================================
