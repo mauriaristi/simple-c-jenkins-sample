@@ -15,7 +15,7 @@ int main(){
 	
 	int err = ASSERT_PASS;
 
-	err = err | test1(); // Run test 1
+	err = err | test1() // Run test 1
 	err = err | test2(); // Run test 2
 	
 	return err ; 
@@ -41,7 +41,7 @@ int test1(){
 	
 	printf("Assessing test case 1 -> ");
 
-	return assertResultInt( result, num1+num2 ); 
+	return assertResultInt( result, 3 ); 
 
 }
 // ==============================================

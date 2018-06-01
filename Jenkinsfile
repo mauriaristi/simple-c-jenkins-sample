@@ -1,5 +1,6 @@
 // Jenkins file to build and test the C-project.
 pipeline {
+    
     // Environment requirements defined in Dockerfile
     agent {
         dockerfile true
