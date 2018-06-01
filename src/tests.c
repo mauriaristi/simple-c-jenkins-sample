@@ -15,7 +15,7 @@ int main(){
 	
 	int err = ASSERT_PASS;
 
-	err = err | test1() // Run test 1
+	err = err | test1(); // Run test 1
 	err = err | test2(); // Run test 2
 	
 	return err ; 
