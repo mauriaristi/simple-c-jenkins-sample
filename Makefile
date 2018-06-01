@@ -15,7 +15,7 @@ LIBS     =
 _DEPS    = simple.h
 DEPS     = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ     = simple.o example1.o
+_OBJ     = simple.o example2.o 
 OBJ      = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
