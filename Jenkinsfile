@@ -1,34 +1,28 @@
+// Jenkins file to build and test the C-project.
 pipeline {
+    // Environment requirements defined in Dockerfile
     agent {
         dockerfile true
     }
+
+    // Stages of the process
     stages {
+
+        // 1. Build the system.
         stage('Build') { 
             
-            //     docker {
-            //         image 'python:2-alpine' 
-            //     }
-            // }
             steps {
-                echo 'Building ... '
                 sh 'make clean && make' 
             }
         }
+
+        // 2. Run the tests.
         stage('Test') {
             
-            //     docker {
-            //         image 'qnib/pytest'
-            //     }
-            // }
             steps {
-                echo 'Testing ... '
-                sh './build/example1'
+                sh './build/tests'
             }
-            // post {
-            //     always {
-            //         junit 'test-reports/results.xml'
-            //     }
-            // }
+            
         }
     }
 
